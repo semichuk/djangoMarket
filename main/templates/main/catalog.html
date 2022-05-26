@@ -1,0 +1,45 @@
+{% extends 'main/base.html'  %}
+{% load static %}
+
+{% block title  %}
+Catalog
+{% endblock  %}
+
+{% block content  %}
+<div class="my-5" >
+<h1 style="text-align: center;" >Catalog</h1>
+</div>
+<div class="container px-4" >
+<div class="row gx-5">
+    {% if products  %}
+        {% for item in products  %}
+            <div class = "col-4" >
+                <div class="p-1 my-4  border border-5 border-success rounded" style="text-align: center;">
+                    <img src="static/image/{{item.image}}"  style="max-width: 100%;" class="rounded" >
+                    <div>
+                        {{item.name}}         
+                    </div>
+                    </br>
+                    <div>
+                        <h3>
+                        {{item.cost}} $
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <div class="col" >
+                            <a href="/discription?id={{item.id}}"><button class="btn btn-lg  btn-success" type="button" >Description</button>
+</a>
+                        </div>
+                        <div class="col" >
+                            <a href="{% url 'purchase_confirmation' %}?id={{item.id}}"><button class="btn btn-lg  btn-success" type="button" >Buy</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor  %}
+    {% else  %}
+        <p>No items</p>
+    {% endif  %}
+</div>
+</div>
+{% endblock  %}

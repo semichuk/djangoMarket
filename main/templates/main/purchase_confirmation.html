@@ -1,0 +1,30 @@
+{% extends 'main/base.html'  %}
+{% load static  %}
+
+
+{% block title  %}
+Purchase confirmation
+{% endblock  %}
+
+{% block content  %}
+{% if user.is_authenticated %}
+    <div>
+        <h3>Data of user {{user.username}}</h3>
+    </div>
+{% else %}
+    <div class="alert alert-danger my-5">
+        <h1>You are not log in, please <a href="{% url 'login' %}">authorization</a></h1>
+    </div>
+{% endif  %}
+<!--    {% if favorites  %}
+        {% for item in favorites  %}
+            <div class = "alert alert-warning mt-2">
+              <h3> {{item.title}} </h3>
+              <p> {{item.categoria}} </p>
+            </div>
+        {% endfor  %}
+    {% else  %}
+        <p>No items</p>
+    {% endif  %}-->
+   
+{% endblock  %}

@@ -1,0 +1,44 @@
+{% extends 'main/base.html'  %}
+{% load static  %}
+
+
+{% block title  %}
+{{title}}
+{% endblock  %}
+
+{% block content  %}
+    <h1>Health food store</h1>
+<!--    {% if favorites  %}
+        {% for item in favorites  %}
+            <div class = "alert alert-warning mt-2">
+              <h3> {{item.title}} </h3>
+              <p> {{item.categoria}} </p>
+            </div>
+        {% endfor  %}
+    {% else  %}
+        <p>No items</p>
+    {% endif  %}-->
+    <p>For those who really understand the usefulness of products. And for those who just want to buy food without overpaying for the eco-friendly fashion. And even for those who don't care if what they eat is edible. We just want the world to be a better place. And, yes, we started with ourselves.</p>
+    <div class="row">
+    <div class="col-8" >
+        <img src="{% static 'image/food.jpg'%}"  style="max-width: 100%;" class="rounded" >
+    </div>
+    <div class="col-4" >
+        <div class="row">
+            <div class="col-12 my-1" >
+            <img src="{% static 'image/food3.jpeg'%}"  style="max-width: 95%;" class="rounded" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 my-1" >
+            <img src="{% static 'image/food2.jpg'%}"  style="max-width: 95%;" class="rounded" >
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="mx-1 col-auto border border-2 border-success rounded"><h3>Contacts: +78033875327</h3></div>
+        <div class="mx-1 col-auto border border-2 border-success rounded"><h3>Address: Freshland, Glubink region, Freshtown, st. food, 42</h3></div>
+    </div>
+    
+{% endblock  %}

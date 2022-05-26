@@ -1,0 +1,37 @@
+{% extends 'main/base.html'  %}
+{% load static %}
+
+{% block title  %}
+Каталог
+{% endblock  %}
+
+{% block content  %}
+<div class="my-5 " >
+<h1 style="text-align: center;" >{{name}}</h1>
+</div>
+
+<div  style="text-align: center;">
+  <img src="static/image/{{image}}"  style="max-width: 100%;" class="rounded" >
+  <div>
+    
+  </div>
+                    </br>
+                    <div >
+                      {{description}}
+                    </div>
+                    <div class="row my-5" >
+                    <div class= "col-6">
+                      <h3>
+                      Cost: {{cost}} $
+                      </h3>
+                    </div >
+                    <div class="col-6" >
+                      <a href="{% url 'purchase_confirmation' %}"><button class="btn btn-lg  btn-success" type="button" >Buy</button></a>
+                    </div>
+                    </div>
+</div>
+</div>
+</div>
+</div>
+        
+{% endblock  %}

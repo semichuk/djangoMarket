@@ -1,0 +1,26 @@
+{% extends 'main/base.html'  %}
+{% load static  %}
+
+
+{% block title  %}
+Данные пользователя
+{% endblock  %}
+
+
+{% block content  %}
+    <h4 class= "my-4">Изменение данных пользователя</h4>
+    <form action= "#" method= "POST"  >
+        {% csrf_token  %}
+        <div class= "col-md-4">
+            <input type="text" id="name" class="form-control my-4" placeholder="Имя">
+            <input type="text" id="surname" class="form-control my-4" placeholder="Фамилия">
+            <input type="text" id="numberPhone" class="form-control my-4" placeholder="Номер телефона">
+            <input type="text" id="userEmail" class="form-control my-4" placeholder="Почта">
+            <input type="text" id="country" class="form-control my-4" placeholder="Страна">
+        </div>
+        <div>
+            <button type="submit" id= "button" class="btn btn-sm btn-success">Сохранить</button>
+        </div>
+    </form>
+    <script src= "{% static 'js/user_data_applying.js'  %}"></script>
+{% endblock  %}
